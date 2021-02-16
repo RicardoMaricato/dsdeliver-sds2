@@ -33,6 +33,15 @@ public class Order implements Serializable {
         inverseJoinColumns = @JoinColumn(name = "product_id"))
     private Set<Product> products = new HashSet<>();
 
+    public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
+        this.id = id;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.moment = moment;
+        this.status = status;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
